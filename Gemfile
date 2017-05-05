@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby ENV['CUSTOM_RUBY_VERSION'] || '2.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '4.2.7.1'
 # Use sqlite3 as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -85,12 +85,16 @@ gem 'markable', github: 'tachyons/markable'
 gem 'rails-observers'
 
 # plugins
-gem 'acts_as_pluggable' # , github: 'tachyons/acts_as_pluggable'
+# gem 'acts_as_pluggable' # , github: 'tachyons/acts_as_pluggable'
 # gem 'acts_as_pluggable',path: '~/projects/acts_as_pluggable'
 
-Dir.entries('plugins').select { |f| !File.directory? f }.each do |plugin|
-  gem plugin, path: 'plugins/' + plugin
-end
+# Dir.entries('plugins').select { |f| !File.directory? f }.each do |plugin|
+#   gem plugin, path: 'plugins/' + plugin
+# end
+
+gem 'karmahrm_discussion', git: 'https://github.com/amoniacou/karmahrm_discussion.git'
+gem 'karmahrm_recruitment', git: 'https://github.com/amoniacou/karmahrm_recruitment.git'
+gem 'karmahrm_feed', git: 'https://github.com/amoniacou/karmahrm_feed.git'
 
 # Admin LTE
 gem 'adminlte2-rails', github: 'tachyons/adminlte2-rails'
