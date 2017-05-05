@@ -85,7 +85,7 @@ gem 'markable', github: 'tachyons/markable'
 gem 'rails-observers'
 
 # plugins
-# gem 'acts_as_pluggable' # , github: 'tachyons/acts_as_pluggable'
+gem 'acts_as_pluggable' # , github: 'tachyons/acts_as_pluggable'
 # gem 'acts_as_pluggable',path: '~/projects/acts_as_pluggable'
 
 # Dir.entries('plugins').select { |f| !File.directory? f }.each do |plugin|

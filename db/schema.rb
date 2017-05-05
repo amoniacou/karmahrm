@@ -87,6 +87,26 @@ ActiveRecord::Schema.define(version: 20160327044047) do
   add_index "calendar_events", ["context_type", "context_id"], name: "index_calendar_events_on_context_type_and_context_id", using: :btree
   add_index "calendar_events", ["user_id"], name: "index_calendar_events_on_user_id", using: :btree
 
+  create_table "candidates", force: :cascade do |t|
+    t.integer  "recruitment_id"
+    t.text     "first_name"
+    t.text     "last_name"
+    t.text     "address"
+    t.date     "dob_date"
+    t.text     "city"
+    t.text     "state"
+    t.integer  "pin_code"
+    t.integer  "home_phone_number"
+    t.integer  "mobile"
+    t.text     "email"
+    t.text     "qualification"
+    t.boolean  "status"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "candidates", ["recruitment_id"], name: "index_candidates_on_recruitment_id", using: :btree
+
   create_table "comments", force: :cascade do |t|
     t.string   "type"
     t.text     "content"
@@ -149,6 +169,17 @@ ActiveRecord::Schema.define(version: 20160327044047) do
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
+
+  create_table "interviews", force: :cascade do |t|
+    t.text     "title"
+    t.integer  "recruitment_id"
+    t.integer  "interviewer_id"
+    t.date     "date_of_interview"
+    t.boolean  "is_deleted",        default: false
+    t.integer  "no_of_candidates"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
 
   create_table "job_titles", force: :cascade do |t|
     t.string   "name"
@@ -291,6 +322,21 @@ ActiveRecord::Schema.define(version: 20160327044047) do
   add_index "posts", ["reply_to_id"], name: "index_posts_on_reply_to_id", using: :btree
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id", using: :btree
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+
+  create_table "recruitments", force: :cascade do |t|
+    t.integer  "department_id"
+    t.text     "title"
+    t.text     "content"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "position"
+    t.integer  "no_of_openings"
+    t.boolean  "is_deleted",     default: false
+    t.boolean  "is_completed",   default: false
+    t.boolean  "is_published",   default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+  end
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

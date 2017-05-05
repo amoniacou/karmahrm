@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/amoniacou/karmahrm_discussion.git
-  revision: 0b5c6b2b7c3640e79200f18eac7752d5a06c4fbe
+  revision: dcb10eb83d9db8bf11140cf319eec1a4271297dd
   specs:
     karmahrm_discussion (0.0.1)
       rails (~> 4.2.0)
@@ -23,7 +23,7 @@ GIT
 
 GIT
   remote: https://github.com/amoniacou/karmahrm_feed.git
-  revision: 4ce1e2b118b0d5e858ea817032bf7239736cdc5f
+  revision: a308b3142c8342d0395f41fd1b393854b4199708
   specs:
     karmahrm_feed (0.0.1)
       autoprefixer-rails
@@ -32,7 +32,7 @@ GIT
 
 GIT
   remote: https://github.com/amoniacou/karmahrm_recruitment.git
-  revision: 1e32aab01e21973c45b9e1509822b6eea0b93150
+  revision: cf350aa948b869f1a4952df2416e25694f75171a
   specs:
     karmahrm_recruitment (0.0.1)
       rails (= 4.2.7.1)
@@ -89,6 +89,9 @@ GEM
       tzinfo (~> 1.1)
     acts-as-taggable-on (3.5.0)
       activerecord (>= 3.2, < 5)
+    acts_as_pluggable (0.1.0beta1)
+      activemodel (>= 3.0)
+      rails (> 4.2)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
     annotate (2.7.1)
@@ -547,6 +550,7 @@ DEPENDENCIES
   active_model_serializers
   activemodel-associations
   acts-as-taggable-on (~> 3.4)
+  acts_as_pluggable
   adminlte2-rails!
   annotate
   audited-activerecord (~> 4.0)
